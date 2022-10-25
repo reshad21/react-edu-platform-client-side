@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 
-const About = () => {
+const Courses = () => {
     const { user } = useContext(AuthContext);
     return (
         <div>
@@ -10,4 +10,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Courses;
