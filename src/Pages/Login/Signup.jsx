@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Login = () => {
+const Signup = () => {
     return (
         <div className="relative">
             <img
@@ -14,9 +14,42 @@ export const Login = () => {
                         <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                             <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
                                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                                    Log in
+                                    Register
                                 </h3>
                                 <form>
+                                    <div className="mb-1 sm:mb-2">
+                                        <label
+                                            htmlFor="email"
+                                            className="inline-block mb-1 font-medium"
+                                        >
+                                            Full Name
+                                        </label>
+                                        <input
+                                            placeholder="john.doe@example.org"
+                                            required
+                                            type="text"
+                                            className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                                            id="name"
+                                            name="name"
+                                        />
+                                    </div>
+                                    <div className="mb-1 sm:mb-2">
+                                        <label
+                                            htmlFor="email"
+                                            className="inline-block mb-1 font-medium"
+                                        >
+                                            Photo url link
+                                        </label>
+                                        <input
+                                            placeholder="john.doe@example.org"
+                                            required
+                                            type="text"
+                                            className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                                            id="photo"
+                                            name="photo"
+                                        />
+                                    </div>
+
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
@@ -56,7 +89,7 @@ export const Login = () => {
                                             type="submit"
                                             className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-purple-700 text-gray-50"
                                         >
-                                            Log in
+                                            Sign up
                                         </button>
                                     </div>
 
@@ -70,4 +103,4 @@ export const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;
