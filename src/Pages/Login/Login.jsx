@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 // const auth = getAuth(app);
@@ -81,6 +82,7 @@ export const Login = () => {
                                     </div>
 
                                 </form>
+                                <p><Link to='/signup' className='underline text-emerald-900 text-lg'>Register if you don't have any account</Link></p>
                             </div>
                         </div>
                     </div>

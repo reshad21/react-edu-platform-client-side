@@ -1,6 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Signup = () => {
+    const { createUser, updateUserInfo } = useContext(AuthContext);
+
+
+    const handleRegistration = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photo, email, password);
+
+        createUser(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                form.reset();
+                // update user name photo
+                updateUserInfo(name, photo).then(() => {
+                    // Profile updated!
+                    // ...
+                }).catch((error) => {
+                    // An error occurred
+                    // ...
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
     return (
         <div className="relative">
             <img
@@ -16,7 +48,7 @@ const Signup = () => {
                                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                                     Register
                                 </h3>
-                                <form>
+                                <form onSubmit={handleRegistration}>
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
@@ -93,6 +125,8 @@ const Signup = () => {
                                         </button>
                                     </div>
 
+
+                                    <p><Link to='/login'>All ready have any account?</Link></p>
                                 </form>
                             </div>
                         </div>
