@@ -1,6 +1,22 @@
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React from 'react';
+import app from '../../firebase/firebase.config';
+
+const auth = getAuth(app);
 
 export const Login = () => {
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignin = () => {
+
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                console.error(error);
+            });
+    }
     return (
         <div className="relative">
             <img
@@ -58,6 +74,10 @@ export const Login = () => {
                                         >
                                             Log in
                                         </button>
+                                        <p className='underline'>Login with:</p>
+                                        <div className="auto-login-section my-2">
+                                            <button onClick={handleGoogleSignin} className='bg-purple-700 p-3 text-slate-50 rounded'>GooGle</button>
+                                        </div>
                                     </div>
 
                                 </form>
