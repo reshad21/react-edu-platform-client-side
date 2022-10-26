@@ -14,6 +14,11 @@ const AuthProvider = ({ children }) => {
 
     }
 
+    // github signin system
+    const githubSignIn = (githubProvider) => {
+        return signInWithPopup(auth, githubProvider)
+    }
+
     // logout current user
     const logOutUser = () => {
         signOut(auth).then(() => {
@@ -48,7 +53,7 @@ const AuthProvider = ({ children }) => {
     }
 
 
-    const authInfo = { user, googleSignIn, logOutUser, createUser, updateUserInfo }
+    const authInfo = { user, googleSignIn, githubSignIn, logOutUser, createUser, updateUserInfo }
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

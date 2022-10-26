@@ -25,8 +25,7 @@ const Signup = () => {
                     // Profile updated!
                     // ...
                 }).catch((error) => {
-                    // An error occurred
-                    // ...
+
                 });
             })
             .catch((error) => {

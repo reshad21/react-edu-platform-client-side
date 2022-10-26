@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
@@ -6,8 +6,9 @@ import { AuthContext } from '../../Context/AuthProvider';
 // const auth = getAuth(app);
 
 export const Login = () => {
-    const { googleSignIn } = useContext(AuthContext);
+    const { googleSignIn, githubSignIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignin = () => {
         googleSignIn(googleProvider)
@@ -16,6 +17,17 @@ export const Login = () => {
                 // console.log(user);
             }).catch((error) => {
                 console.error(error);
+            });
+    }
+
+    // github sign in system
+    const handleGithubSignin = () => {
+        githubSignIn(githubProvider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                console.log(error);
             });
     }
     return (
@@ -78,6 +90,7 @@ export const Login = () => {
                                         <p className='underline'>Login with:</p>
                                         <div className="auto-login-section my-2">
                                             <button onClick={handleGoogleSignin} className='bg-purple-700 p-3 text-slate-50 rounded'>GooGle</button>
+                                            <button onClick={handleGithubSignin} className='bg-purple-700 p-3 text-slate-50 rounded'>GitHub</button>
                                         </div>
                                     </div>
 
