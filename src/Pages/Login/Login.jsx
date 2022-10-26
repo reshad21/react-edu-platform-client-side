@@ -1,20 +1,47 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 // const auth = getAuth(app);
 
 export const Login = () => {
-    const { googleSignIn, githubSignIn } = useContext(AuthContext);
+    const { loginUser, googleSignIn, githubSignIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    console.log(from);
 
+    // register user login system
+    const handleLoginBtn = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        loginUser(email, password)
+            .then((userCredential) => {
+                // const user = userCredential.user;
+                // navigate('/');
+                // navigate('/blog');
+                navigate(from, { replace: true });
+                // navigate(from);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    // google signin
     const handleGoogleSignin = () => {
         googleSignIn(googleProvider)
             .then((result) => {
                 // const user = result.user;
                 // console.log(user);
+
             }).catch((error) => {
                 console.error(error);
             });
@@ -45,7 +72,7 @@ export const Login = () => {
                                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                                     Log in
                                 </h3>
-                                <form>
+                                <form onSubmit={handleLoginBtn}>
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
