@@ -1,8 +1,8 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
-
 // const auth = getAuth(app);
 
 export const Login = () => {
@@ -87,10 +87,12 @@ export const Login = () => {
                                         >
                                             Log in
                                         </button>
-                                        <p className='underline'>Login with:</p>
+                                        <div className='flex'>
+                                            <h1 className='text-xl'>Login with:</h1>
+                                        </div>
                                         <div className="auto-login-section my-2">
-                                            <button onClick={handleGoogleSignin} className='bg-purple-700 p-3 text-slate-50 rounded'>GooGle</button>
-                                            <button onClick={handleGithubSignin} className='bg-purple-700 p-3 text-slate-50 rounded'>GitHub</button>
+                                            <button onClick={handleGoogleSignin} className='bg-purple-700 p-3 text-slate-50 rounded'><FaGoogle /></button>
+                                            <button onClick={handleGithubSignin} className='bg-purple-700 p-3 text-slate-50 rounded ml-2'><FaGithub /></button>
                                         </div>
                                     </div>
 

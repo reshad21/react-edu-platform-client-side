@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
-
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,7 +18,7 @@ export const Header = () => {
     }
 
     return (
-        <div className="bg-gray-900">
+        <div className="bg-black text-black">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="relative flex items-center justify-between">
                     <div className="flex items-center">
