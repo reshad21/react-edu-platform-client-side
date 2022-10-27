@@ -67,8 +67,15 @@ const AuthProvider = ({ children }) => {
             .then(data => setCategories(data))
     }, [])
 
+    // single product checkout
+    const [singleproduct, setSingleProduct] = useState({})
+    useEffect((params) => {
+        fetch(`http://localhost:5000/product/${params}`)
+            .then(res => res.json())
+            .then(data => setSingleProduct(data))
+    }, [])
 
-    const authInfo = { user, loginUser, googleSignIn, githubSignIn, logOutUser, createUser, updateUserInfo, loading, categories }
+    const authInfo = { user, loginUser, googleSignIn, githubSignIn, logOutUser, createUser, updateUserInfo, loading, categories, singleproduct }
     return (
         <div>
             <AuthContext.Provider value={authInfo}>
