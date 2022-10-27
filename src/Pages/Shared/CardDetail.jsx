@@ -1,7 +1,11 @@
 import React, { useContext } from 'react';
 import { FaDownload } from "react-icons/fa";
 import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import Pdf from "react-to-pdf";
 import { AuthContext } from '../../Context/AuthProvider';
+
+
+const ref = React.createRef();
 
 const CardDetail = () => {
     const { categories, user, singleproduct } = useContext(AuthContext);
@@ -10,6 +14,7 @@ const CardDetail = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+
 
     const handlePremiumAccess = () => {
         // console.log("true");
@@ -32,14 +37,15 @@ const CardDetail = () => {
                     }
                 </div>
 
-
-                <div className="card card-side bg-base-100 shadow-xl basis-3/4">
+                <div ref={ref} className="card card-side bg-base-100 shadow-xl basis-3/4">
                     <div className="flex flex-col lg:flex-row">
                         <figure className='basis-1/4'><img src={product?.photo} alt="Movie" className='h-full' /></figure>
                         <div className="card-body basis-3/4">
                             <div className="flex justify-between items-center">
                                 <h2 className="card-title">{product?.name}!</h2>
-                                <FaDownload />
+                                <Pdf targetRef={ref} filename="code-example.pdf">
+                                    {({ toPdf }) => <button onClick={toPdf}><FaDownload /></button>}
+                                </Pdf>
                             </div>
                             <p>{product?.Details}</p>
                             <div className="card-actions justify-end">

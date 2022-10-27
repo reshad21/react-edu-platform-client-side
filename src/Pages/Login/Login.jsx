@@ -14,6 +14,8 @@ export const Login = () => {
     const from = location.state?.from?.pathname || '/';
     console.log(from);
 
+
+
     // register user login system
     const handleLoginBtn = (e) => {
         e.preventDefault();
@@ -21,6 +23,8 @@ export const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+
+
 
         loginUser(email, password)
             .then((userCredential) => {
