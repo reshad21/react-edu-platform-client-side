@@ -10,7 +10,6 @@ function App() {
       <Flowbite>
         <RouterProvider router={router}></RouterProvider>
       </Flowbite>
-        {/* <RouterProvider router={router}></RouterProvider> */}
     </div>
   );
 }
