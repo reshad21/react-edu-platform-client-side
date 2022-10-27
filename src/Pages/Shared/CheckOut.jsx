@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const CheckOut = () => {
     const { singleproduct } = useContext(AuthContext);
-    console.log(singleproduct);
+    // console.log(singleproduct);
+    const data = useLoaderData();
+    console.log(data);
     return (
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="overflow-x-auto">
@@ -13,27 +16,13 @@ const CheckOut = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Quantify</th>
-                            <th>Course fee</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
+                            <th>{data?.id}</th>
+                            <td>{data?.name}</td>
+                            <td>{data?.Details}</td>
                         </tr>
                     </tbody>
                 </table>

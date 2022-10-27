@@ -1,18 +1,20 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 // const auth = getAuth(app);
 
 export const Login = () => {
-    const { loginUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+    const { loginUser, googleSignIn, githubSignIn, setLoading } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     console.log(from);
+
+    const [error, setError] = useState("");
 
 
 
@@ -33,10 +35,15 @@ export const Login = () => {
                 // navigate('/blog');
                 navigate(from, { replace: true });
                 // navigate(from);
+                setError('');
             })
             .catch((error) => {
                 console.error(error);
-            });
+                setError(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }
 
     // google signin
@@ -48,7 +55,10 @@ export const Login = () => {
 
             }).catch((error) => {
                 console.error(error);
-            });
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }
 
     // github sign in system
@@ -59,7 +69,10 @@ export const Login = () => {
                 console.log(user);
             }).catch((error) => {
                 console.log(error);
-            });
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }
     return (
         <div className="relative">
@@ -130,6 +143,7 @@ export const Login = () => {
 
                                 </form>
                                 <p><Link to='/signup' className='underline text-emerald-900 text-lg'>Register if you don't have any account</Link></p>
+                                <p>{error}</p>
                             </div>
                         </div>
                     </div>

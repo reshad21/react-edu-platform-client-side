@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Signup = () => {
     const { createUser, updateUserInfo } = useContext(AuthContext);
-
+    const [error, setError] = useState("");
 
     const handleRegistration = (e) => {
         e.preventDefault();
@@ -20,6 +20,7 @@ const Signup = () => {
                 const user = userCredential.user;
                 console.log(user);
                 form.reset();
+                setError('');
                 // update user name photo
                 updateUserInfo(name, photo).then(() => {
                     // Profile updated!
@@ -30,6 +31,7 @@ const Signup = () => {
             })
             .catch((error) => {
                 console.error(error);
+                setError(error.message);
             });
     }
     return (
@@ -124,6 +126,7 @@ const Signup = () => {
                                         </button>
                                     </div>
 
+                                    <p>{error}</p>
 
                                     <p><Link to='/login'>All ready have any account?</Link></p>
                                 </form>

@@ -56,7 +56,8 @@ const AuthProvider = ({ children }) => {
 
     // login register user
     const loginUser = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     // data taken from route
@@ -75,7 +76,7 @@ const AuthProvider = ({ children }) => {
             .then(data => setSingleProduct(data))
     }, [])
 
-    const authInfo = { user, loginUser, googleSignIn, githubSignIn, logOutUser, createUser, updateUserInfo, loading, categories, singleproduct }
+    const authInfo = { user, loginUser, googleSignIn, githubSignIn, logOutUser, createUser, updateUserInfo, loading, categories, singleproduct, setLoading }
     return (
         <div>
             <AuthContext.Provider value={authInfo}>
