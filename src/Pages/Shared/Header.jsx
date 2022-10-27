@@ -1,7 +1,7 @@
+import { DarkThemeToggle } from 'flowbite-react';
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
-
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -44,10 +44,11 @@ export const Header = () => {
                                 <rect x="14" y="11" width="7" height="12" />
                             </svg>
                             <span className="ml-2 text-xl font-bold tracking-wide uppercase">
-                                Company
+                                Online Learning
                             </span>
                         </Link>
                         <ul className="flex items-center hidden space-x-8 lg:flex">
+                            <DarkThemeToggle />
                             <li>
                                 <Link
                                     to="/"

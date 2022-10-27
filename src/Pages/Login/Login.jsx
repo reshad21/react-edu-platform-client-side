@@ -114,12 +114,13 @@ export const Login = () => {
                                         >
                                             Log in
                                         </button>
-                                        <div className='flex'>
-                                            <h1 className='text-xl'>Login with:</h1>
-                                        </div>
-                                        <div className="auto-login-section my-2">
-                                            <button onClick={handleGoogleSignin} className='bg-purple-700 p-3 text-slate-50 rounded'><FaGoogle /></button>
-                                            <button onClick={handleGithubSignin} className='bg-purple-700 p-3 text-slate-50 rounded ml-2'><FaGithub /></button>
+                                        <div className='flex items-center gap-1'>
+                                            <h1 className='text-xl font-bold'>Login With:</h1>
+
+                                            <div className="auto-login-section my-2 flex gap-1">
+                                                <button onClick={handleGoogleSignin} className='p-3 text-black rounded border-black border-2'><FaGoogle /></button>
+                                                <button onClick={handleGithubSignin} className='p-3 text-black rounded border-black border-2'><FaGithub /></button>
+                                            </div>
                                         </div>
                                     </div>
 
