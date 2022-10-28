@@ -10,15 +10,15 @@ const CheckOut = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Name</th>
-                            <th>Quantify</th>
+                            <th className='text-black'>Name</th>
+                            <th className='text-black'>Quantify</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>{data?.id}</th>
-                            <td>{data?.name}</td>
-                            <td>{data?.Details}</td>
+                            <th className='text-black'>{data?.id}</th>
+                            <td className='text-black'>{data?.name}</td>
+                            <td className='text-black'>{data?.Details}</td>
                         </tr>
                     </tbody>
                 </table>
