@@ -82,14 +82,14 @@ export const Login = () => {
                     <div className="flex flex-col items-center justify-center xl:flex-row">
                         <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                             <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
-                                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl text-black">
                                     Log in
                                 </h3>
                                 <form onSubmit={handleLoginBtn}>
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
-                                            className="inline-block mb-1 font-medium"
+                                            className="inline-block mb-1 font-medium text-black"
                                         >
                                             E-mail
                                         </label>
@@ -106,7 +106,7 @@ export const Login = () => {
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
-                                            className="inline-block mb-1 font-medium"
+                                            className="inline-block mb-1 font-medium text-black"
                                         >
                                             Password
                                         </label>
@@ -123,12 +123,12 @@ export const Login = () => {
                                     <div className="mt-4 mb-2 sm:mb-4">
                                         <button
                                             type="submit"
-                                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-purple-700 text-gray-50"
+                                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-purple-700  text-gray-50"
                                         >
                                             Log in
                                         </button>
                                         <div className='flex items-center gap-1'>
-                                            <h1 className='text-xl font-bold'>Login With:</h1>
+                                            <h1 className='text-xl font-bold text-black'>Login With:</h1>
 
                                             <div className="auto-login-section my-2 flex gap-1">
                                                 <button onClick={handleGoogleSignin} className='p-3 text-black rounded border-black border-2'><FaGoogle /></button>
@@ -139,7 +139,7 @@ export const Login = () => {
 
                                 </form>
                                 <p><Link to='/signup' className='underline text-emerald-900 text-lg'>Register if you don't have any account</Link></p>
-                                <p>{error}</p>
+                                <p className='text-black'>{error}</p>
                             </div>
                         </div>
                     </div>

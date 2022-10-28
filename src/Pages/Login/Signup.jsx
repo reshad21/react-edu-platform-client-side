@@ -46,14 +46,14 @@ const Signup = () => {
                     <div className="flex flex-col items-center justify-center xl:flex-row">
                         <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                             <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
-                                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl text-black">
                                     Register
                                 </h3>
                                 <form onSubmit={handleRegistration}>
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
-                                            className="inline-block mb-1 font-medium"
+                                            className="inline-block mb-1 font-medium text-black"
                                         >
                                             Full Name
                                         </label>
@@ -69,7 +69,7 @@ const Signup = () => {
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
-                                            className="inline-block mb-1 font-medium"
+                                            className="inline-block mb-1 font-medium text-black"
                                         >
                                             Photo url link
                                         </label>
@@ -86,7 +86,7 @@ const Signup = () => {
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
-                                            className="inline-block mb-1 font-medium"
+                                            className="inline-block mb-1 font-medium text-black"
                                         >
                                             E-mail
                                         </label>
@@ -103,7 +103,7 @@ const Signup = () => {
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
-                                            className="inline-block mb-1 font-medium"
+                                            className="inline-block mb-1 font-medium text-black"
                                         >
                                             Password
                                         </label>
@@ -126,9 +126,9 @@ const Signup = () => {
                                         </button>
                                     </div>
 
-                                    <p>{error}</p>
+                                    <p className='text-black'>{error}</p>
 
-                                    <p><Link to='/login'>All ready have any account?</Link></p>
+                                    <p><Link to='/login' className='text-black'>All ready have any account?</Link></p>
                                 </form>
                             </div>
                         </div>
