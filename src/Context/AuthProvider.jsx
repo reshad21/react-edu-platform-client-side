@@ -23,11 +23,9 @@ const AuthProvider = ({ children }) => {
 
     // logout current user
     const logOutUser = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        });
+        signOut(auth)
+            .then(() => { })
+            .catch((error) => { });
     }
 
     // current user set
@@ -63,7 +61,7 @@ const AuthProvider = ({ children }) => {
     // data taken from route
     const [categories, setCategories] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/allProducts`)
+        fetch(`https://different-six.vercel.app/allProducts`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -71,10 +69,11 @@ const AuthProvider = ({ children }) => {
     // single product checkout
     const [singleproduct, setSingleProduct] = useState({})
     useEffect((params) => {
-        fetch(`http://localhost:5000/product/${params}`)
+        fetch(`https://different-six.vercel.app/product/${params}`)
             .then(res => res.json())
             .then(data => setSingleProduct(data))
     }, [])
+
 
     const authInfo = { user, loginUser, googleSignIn, githubSignIn, logOutUser, createUser, updateUserInfo, loading, categories, singleproduct, setLoading }
     return (

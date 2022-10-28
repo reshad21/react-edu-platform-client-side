@@ -30,11 +30,7 @@ export const Login = () => {
 
         loginUser(email, password)
             .then((userCredential) => {
-                // const user = userCredential.user;
-                // navigate('/');
-                // navigate('/blog');
                 navigate(from, { replace: true });
-                // navigate(from);
                 setError('');
             })
             .catch((error) => {

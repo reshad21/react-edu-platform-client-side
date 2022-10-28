@@ -6,15 +6,11 @@ export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const { user, logOutUser } = useContext(AuthContext);
-    console.log(user);
 
     const handleUserLogout = () => {
-        console.log("logout user");
-        logOutUser().then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        });
+        logOutUser()
+            .then(() => { })
+            .catch((error) => { });
     }
 
     return (

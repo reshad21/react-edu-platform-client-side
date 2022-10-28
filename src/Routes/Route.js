@@ -32,12 +32,12 @@ export const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch(`http://localhost:5000/allProducts`)
+                loader: () => fetch(`https://different-six.vercel.app/allProducts`)
             },
             {
                 path: '/product/:id',
-                element:<CardDetail></CardDetail>,
-                loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`),
+                element: <CardDetail></CardDetail>,
+                loader: ({ params }) => fetch(`https://different-six.vercel.app/product/${params.id}`),
             },
             {
                 path: '/faq',
@@ -53,8 +53,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`),
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://different-six.vercel.app/product/${params.id}`),
             },
         ]
     }

@@ -9,10 +9,8 @@ const ref = React.createRef();
 
 const CardDetail = () => {
     const { categories, user, singleproduct } = useContext(AuthContext);
-    console.log(user);
     const product = useLoaderData();
     const { id } = product;
-    // console.log(product);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -21,7 +19,6 @@ const CardDetail = () => {
 
 
     const handlePremiumAccess = () => {
-        // console.log("true");
         if (user == null) {
             console.log("user don't get");
             // return <Navigate to='/login' state={{ from: location }} replace></Navigate>
