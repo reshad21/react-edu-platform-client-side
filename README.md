@@ -1,5 +1,14 @@
 * website name: ONLINE LEARNING
 * live website link: https://react-educationl-platform.web.app/
+* Website different features and functionality : I use route context api and a good structure folder for this project. Any body can easy understand what is the purpose of the website.
+* I use Vercel for Backend data.
+* Technologies: 
+    * use react rouder dom
+    * use firebase authentication
+    * use tailwind
+    * daisy ui (tailwind component library)
+    * react-flowbite (tailwind component library)
+    * using dark mode toggle
 
 # Getting Started with Create React App
 
