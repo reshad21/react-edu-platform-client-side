@@ -46,6 +46,7 @@ export const Login = () => {
     const handleGoogleSignin = () => {
         googleSignIn(googleProvider)
             .then((result) => {
+                navigate(from, { replace: true });
                 // const user = result.user;
                 // console.log(user);
 
@@ -61,6 +62,7 @@ export const Login = () => {
     const handleGithubSignin = () => {
         githubSignIn(githubProvider)
             .then((result) => {
+                navigate(from, { replace: true });
                 const user = result.user;
                 console.log(user);
             }).catch((error) => {
