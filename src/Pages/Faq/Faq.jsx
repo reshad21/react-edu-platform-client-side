@@ -45,88 +45,48 @@ export const Faq = () => {
                 </div>
             </div>
             <div className="max-w-screen-xl sm:mx-auto">
-                <div className="grid grid-cols-1 gap-16 row-gap-8 lg:grid-cols-2">
-                    <div className="space-y-8">
+                <div className="">
+                    <div className="grid grid-cols-1 gap-16 row-gap-8 lg:grid-cols-3">
                         <div>
                             <p className="mb-4 text-xl font-medium">
-                                The quick, brown fox jumps over a lazy dog?
+                                What are the technology requirements to take an online course??
                             </p>
                             <p className="text-gray-700">
-                                Space, the final frontier. These are the voyages of the Starship
-                                Enterprise. Its five-year mission: to explore strange new
-                                worlds.
-                                <br />
-                                <br />
-                                Many say exploration is part of our destiny, but it’s actually
-                                our duty to future generations.
+                                You will need a computer, a high speed Internet connection, a newer version of a web browser, and access to common tools and software like word processors, email, etc. Some courses may have other software or technology requirements as well.
                             </p>
                         </div>
                         <div>
                             <p className="mb-4 text-xl font-medium">
-                                The first mate and his Skipper too will do?
+                                What are the admission requirements for Online Learning courses?
                             </p>
                             <p className="text-gray-700">
-                                Well, the way they make shows is, they make one show. That
-                                show's called a pilot.
-                                <br />
-                                <br />
-                                Then they show that show to the people who make shows, and on
-                                the strength of that one show they decide if they're going to
-                                make more shows. Some pilots get picked and become television
-                                programs.Some don't, become nothing. She starred in one of the
-                                ones that became nothing.
+                                The Online Learning program currently operates in semesters and each online course carries between two and four semester credits. Registration begins when the course offerings are listed on the Online Learning website and continues until the first day of classes or the course is full. Please carefully read through the registration section for your student status before you register:
+
+                                <ol>
+                                    <li>High school program (PSEO) registration</li>
+                                    <li>Student from another U of M campus registration</li>
+                                    <li>Non-University of Minnesota student registration</li>
+                                    <li>Current Morris student registration</li>
+                                </ol>
                             </p>
                         </div>
                         <div>
                             <p className="mb-4 text-xl font-medium">
-                                Is the Space Pope reptilian!?
+                                Is it possible to earn a degree through the Online Learning pro!?
                             </p>
                             <p className="text-gray-700">
-                                A flower in my garden, a mystery in my panties. Heart attack
-                                never stopped old Big Bear. I didn't even know we were calling
-                                him Big Bear.
+                                Yes it is possible
                             </p>
                         </div>
-                    </div>
-                    <div className="space-y-8">
-                        <div>
-                            <p className="mb-4 text-xl font-medium">
-                                How much money you got on you?
-                            </p>
-                            <p className="text-gray-700">
-                                The first mate and his Skipper too will do their very best to
-                                make the others comfortable in their tropic island nest.
-                                <br />
-                                <br />
-                                Michael Knight a young loner on a crusade to champion the cause
-                                of the innocent. The helpless. The powerless in a world of
-                                criminals who operate above the law. Here he comes Here comes
-                                Speed Racer. He's a demon on wheels.
-                            </p>
-                        </div>
-                        <div>
-                            <p className="mb-4 text-xl font-medium">
-                                Galaxies Orion's sword globular star cluster?
-                            </p>
-                            <p className="text-gray-700">
-                                A business big enough that it could be listed on the NASDAQ goes
-                                belly up. Disappears!
-                                <br />
-                                <br />
-                                It ceases to exist without me. No, you clearly don't know who
-                                you're talking to, so let me clue you in.
-                            </p>
-                        </div>
-                        <div>
-                            <p className="mb-4 text-xl font-medium">
-                                When has justice ever been as simple as a rule book?
-                            </p>
-                            <p className="text-gray-700">
-                                This is not about revenge. This is about justice. A lot of
-                                things can change in twelve years, Admiral. Well, that's
-                                certainly good to know. About four years. I got tired of hearing
-                                how young I looked.
-                            </p>
+                        <div className="space-y-8">
+                            <div>
+                                <p className="mb-4 text-xl font-medium">
+                                    How do I contact my course instructor??
+                                </p>
+                                <p className="text-gray-700">
+                                    Instructors stay in touch with their Online Learning students in a variety of ways, depending on the course design. Your instructor will explain the best way to reach him or her within the course home pages. You may communicate with your instructor through discussion groups, bulletin boards, chat rooms, assignment submissions, through email, or by telephone.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
