@@ -1,3 +1,6 @@
+-website name: ONLINE LEARNING
+-live website link: https://react-educationl-platform.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
