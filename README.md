@@ -1,5 +1,5 @@
--website name: ONLINE LEARNING
--live website link: https://react-educationl-platform.web.app/
+*website name: ONLINE LEARNING
+*live website link: https://react-educationl-platform.web.app/
 
 # Getting Started with Create React App
 
