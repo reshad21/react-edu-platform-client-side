@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaDownload } from "react-icons/fa";
-import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Pdf from "react-to-pdf";
 import { AuthContext } from '../../Context/AuthProvider';
 
@@ -8,12 +8,12 @@ import { AuthContext } from '../../Context/AuthProvider';
 const ref = React.createRef();
 
 const CardDetail = () => {
-    const { categories, user, singleproduct } = useContext(AuthContext);
+    const { categories, user } = useContext(AuthContext);
     const product = useLoaderData();
     const { id } = product;
 
     const navigate = useNavigate();
-    const location = useLocation();
+    // const location = useLocation();
 
 
 
